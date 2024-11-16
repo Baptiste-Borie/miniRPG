@@ -1,0 +1,2 @@
+  javac -d build src/miniRPG/*.java src/miniRPG/**/*.java
+  java -cp build miniRPG.Game
