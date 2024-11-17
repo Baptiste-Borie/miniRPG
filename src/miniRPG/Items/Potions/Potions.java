@@ -8,22 +8,22 @@ public abstract class Potions implements Item {
     private int effect;
 
     /**
-     * Nom de l'arme.
+     * Nom de la potion.
      */
     private String name;
 
     /**
-     * Prix de l'arme en monnaie du jeu.
+     * Prix de la potion en monnaie du jeu.
      */
     private int price;
 
     /**
-     * Constructeur de la classe Weapon.
+     * Constructeur de la classe Potions.
      * Initialise les propriétés de base d'une arme.
      *
-     * @param effect Les dégâts infligés par l'arme.
-     * @param name   Le nom de l'arme.
-     * @param price  Le prix de l'arme.
+     * @param effect Les effets dela potion.
+     * @param name   Le nom de la potion.
+     * @param price  Le prix de la potion.
      */
     public Potions(int effect, String name, int price) {
         this.effect = effect;
@@ -41,52 +41,52 @@ public abstract class Potions implements Item {
     }
 
     /**
-     * Obtient le nom de l'arme.
+     * Obtient le nom de la potion.
      *
-     * @return Le nom de l'arme.
+     * @return Le nom de la potion.
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * Obtient le prix de l'arme.
+     * Obtient le prix de la potion.
      *
-     * @return Le prix de l'arme.
+     * @return Le prix de la potion.
      */
     public int getPrice() {
         return this.price;
     }
 
     /**
-     * Définit les dégâts de l'arme.
+     * Définit les effets de la potion.
      *
-     * @param damage Les nouveaux dégâts de l'arme.
+     * @param effects Les nouveaux effets de la potion.
      */
-    public void setEffect(int damage) {
-        this.effect = damage;
+    public void setEffect(int effects) {
+        this.effect = effects;
     }
 
     /**
-     * Définit le nom de l'arme.
+     * Définit le nom de la potion.
      *
-     * @param name Le nouveau nom de l'arme.
+     * @param name Le nouveau nom de la potion.
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * Définit le prix de l'arme.
+     * Définit le prix de la potion.
      *
-     * @param price Le nouveau prix de l'arme.
+     * @param price Le nouveau prix de la potion.
      */
     public void setPrice(int price) {
         this.price = price;
     }
 
     /**
-     * Retourne le type de l'objet, ici "Weapon".
+     * Retourne le type de l'objet, ici "Potion".
      *
      * @return Une chaîne représentant le type de l'objet.
      */
@@ -96,9 +96,9 @@ public abstract class Potions implements Item {
     }
 
     /**
-     * Retourne la puissance de l'arme, équivalente à ses dégâts.
+     * Retourne la puissance de la potion, équivalente à ses effets.
      *
-     * @return La puissance de l'arme.
+     * @return La puissance de la potion.
      */
     @Override
     public int getPower() {
@@ -106,15 +106,15 @@ public abstract class Potions implements Item {
     }
 
     /**
-     * Méthode abstraite représentant l'action d'attaque avec l'arme.
+     * Méthode abstraite représentant l'action de consommer une potion.
      * Doit être implémentée par les sous-classes.
      */
     public abstract void applyPotion(Joueur Joueur);
 
     /**
-     * Représente l'arme sous forme de chaîne de caractères.
+     * Représente la potion sous forme de chaîne de caractères.
      *
-     * @return Une chaîne décrivant l'arme avec son nom, ses dégâts, et son prix.
+     * @return Une chaîne décrivant la potion avec son nom, ses effets, et son prix.
      */
     @Override
     public String toString() {

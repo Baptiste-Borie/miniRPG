@@ -222,6 +222,7 @@ public class Game {
                 + "Vous incarnez un " + ((Joueur) this.player).getClasseType()
                 + " qui doit explorer un donjon et en battre le boss afin de sortir.\n"
                 + "Déplacez-vous avec les touches ZQSD, et appuyez sur E pour quitter le jeu.\n"
+                + "A tout moment, appuyez sur I pour afficher les informations de votre personnage.\n"
                 + "Trouvez la salle du boss pour terminer le jeu !\n");
 
         return "Vous êtes prêt à commencer l'aventure !";

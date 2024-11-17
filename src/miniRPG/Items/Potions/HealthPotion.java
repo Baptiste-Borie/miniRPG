@@ -3,37 +3,37 @@ package miniRPG.Items.Potions;
 import miniRPG.Person.Joueur;
 
 /**
- * Classe Axe représente une hache dans le miniRPG.
- * Elle hérite de la classe abstraite {@link Weapon} et implémente
- * le comportement spécifique de l'attaque avec une hache.
+ * Classe HealthPotion représente une potion de soin dans le miniRPG.
+ * Elle hérite de la classe abstraite {@link Potions} et implémente
+ * le comportement spécifique des potions.
  * 
- * La hache est caractérisée par des dégâts modérés et un prix raisonnable.
+ * Cette potion rend toute sa vie au personnage.
  * 
  * @author Baptiste Borie
  */
 public class HealthPotion extends Potions {
 
     /**
-     * Dégâts infligés par la hache.
+     * Montant soigné par la potion.
      */
     private static final int EFFECT = 120;
 
     /**
-     * Prix de la hache en monnaie du jeu.
+     * Prix de la potion en monnaie du jeu.
      */
     private static final int PRICE = 5;
 
     /**
-     * Constructeur de la classe Axe.
-     * Initialise la hache avec ses dégâts, son nom, et son prix.
+     * Constructeur de la classe HealthPotion.
+     * Initialise la potion avec ses effets, son nom, et son prix.
      */
     public HealthPotion() {
         super(EFFECT, "Potion de soin", PRICE);
     }
 
     /**
-     * Action spécifique de la hache lors d'une attaque.
-     * Affiche un message indiquant que la hache est utilisée.
+     * Action spécifique de la potion lors de l'achat de la potion.
+     * Affiche un message indiquant que la potion est utilisée.
      */
     @Override
     public void applyPotion(Joueur joueur) {

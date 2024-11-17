@@ -3,9 +3,9 @@ package miniRPG.Items.Potions;
 import java.util.*;
 
 /**
- * Classe PotionStore représente une boutique ou un stockage d'armes
+ * Classe PotionStore représente une boutique ou un stockage de potions
  * disponibles dans le miniRPG.
- * Elle permet d'ajouter, de modifier, et de récupérer des armes pour les
+ * Elle permet d'ajouter, de modifier, et de récupérer des potions pour les
  * joueurs ou ennemis.
  * 
  * @author Baptiste Borie
@@ -13,14 +13,14 @@ import java.util.*;
 public class PotionsStore {
 
     /**
-     * Liste des armes disponibles dans le stockage.
+     * Liste des potions disponibles dans le stockage.
      */
     private ArrayList<Potions> Potions;
 
     /**
      * Constructeur de la classe PotionStore.
-     * Initialise le stockage avec une liste d'armes par défaut :
-     * {@link Fists}, {@link Sword}, {@link Axe}, {@link Hammer}.
+     * Initialise le stockage avec une liste de potions par défaut :
+     * {@link HealthPotion}.
      */
     public PotionsStore() {
         this.Potions = new ArrayList<Potions>();
@@ -28,17 +28,17 @@ public class PotionsStore {
     }
 
     /**
-     * Récupère une arme spécifique du stockage en fonction de son index.
+     * Récupère une potion spécifique du stockage en fonction de son index.
      *
-     * @param index L'index de l'arme à récupérer.
-     * @return L'arme correspondant à l'index.
+     * @param index L'index de la potion à récupérer.
+     * @return La potion correspondant à l'index.
      */
     public Potions getPotion(int index) {
         return this.Potions.get(index);
     }
 
     /**
-     * Récupère la liste complète des armes disponibles dans le stockage.
+     * Récupère la liste complète des potions disponibles dans le stockage.
      *
      * @return Une liste d'objets {@link Potion}.
      */
@@ -47,20 +47,20 @@ public class PotionsStore {
     }
 
     /**
-     * Modifie une arme spécifique dans le stockage.
+     * Modifie une potion spécifique dans le stockage.
      *
-     * @param index  L'index de l'arme à modifier.
-     * @param Potion La nouvelle arme à placer à cet index.
+     * @param index  L'index de la potion à modifier.
+     * @param Potion La nouvelle potion à placer à cet index.
      */
     public void setPotion(int index, Potions Potion) {
         this.Potions.set(index, Potion);
     }
 
     /**
-     * Affiche la liste des armes disponibles dans le stockage.
-     * Chaque arme est affichée avec son index et ses détails.
+     * Affiche la liste des potions disponibles dans le stockage.
+     * Chaque potion est affichée avec son index et ses détails.
      *
-     * @return La liste des armes.
+     * @return La liste des potions.
      */
     @Override
     public String toString() {
