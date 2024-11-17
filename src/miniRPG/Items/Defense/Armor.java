@@ -18,7 +18,7 @@ public class Armor extends Defense {
     /**
      * Prix de l'armure en monnaie du jeu.
      */
-    private static final int PRICE = 35;
+    private static final int PRICE = 30;
 
     /**
      * Constructeur de la classe Armor.

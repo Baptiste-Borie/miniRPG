@@ -5,6 +5,7 @@ import java.util.Scanner;
 import miniRPG.Items.*;
 import miniRPG.Items.Defense.*;
 import miniRPG.Items.Weapon.*;
+import miniRPG.Items.Potions.*;
 import miniRPG.Person.*;
 
 /**
@@ -51,12 +52,13 @@ public class Trade {
      * ou de quitter la boutique.
      */
     public void start() {
-        System.out.println("Bienvenue dans la boutique !");
+        System.out.println("Bienvenue dans ma boutique étranger !");
         System.out.println("Vous avez " + player.getMoney() + "$");
-        System.out.println("Voici ce que j'ai pour vous :");
-        System.out.println(itemStore);
+        System.out.println(
+                "Dépechez vous d'achetez afin que je fuis ces couloirs ne sont pas surs.\n Et ce qui vous attends et bien pire que \ntout ce que vous avez pu voir jusqu'ici. \nVoici ce que j'ai pour vous :");
         Scanner scanner = new Scanner(System.in);
         while (tradeOver) {
+            System.out.println(itemStore);
             System.out.println(
                     "Que voulez-vous faire ? (Entrez le numéro de l'item que vous voulez acheter ou q pour quitter)");
             String input = scanner.nextLine();
@@ -95,9 +97,13 @@ public class Trade {
             } else if ("Defense".equals(item.getType())) {
                 player.setDefense((Defense) item);
                 System.out.println("Vous avez acheté la défense " + item.getName());
+            } else if ("Potions".equals(item.getType())) {
+                Potions potion = (Potions) item;
+                potion.applyPotion(player);
+                System.out.println("Vous buvez une potion voici vos nouvelles statistiques :" + player);
             }
 
-            System.out.println("Il vous reste " + player.getMoney() + "$");
+            System.out.println("Il vous reste " + player.getMoney() + "$ \n");
         } else {
             System.out.println("Vous n'avez pas assez d'argent pour acheter " + item.getName());
         }

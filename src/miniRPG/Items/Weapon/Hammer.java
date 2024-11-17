@@ -14,12 +14,12 @@ public class Hammer extends Weapon {
     /**
      * Dégâts infligés par le marteau.
      */
-    private static final int DAMAGE = 20;
+    private static final int DAMAGE = 30;
 
     /**
      * Prix du marteau en monnaie du jeu.
      */
-    private static final int PRICE = 35;
+    private static final int PRICE = 30;
 
     /**
      * Constructeur de la classe Hammer.

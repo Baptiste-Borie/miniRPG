@@ -17,7 +17,7 @@ public class Skeleton extends Person {
     /**
      * Valeur d'attaque du squelette.
      */
-    private static final int ATTACK = 8;
+    private static final int ATTACK = 20;
 
     /**
      * Valeur de défense du squelette.

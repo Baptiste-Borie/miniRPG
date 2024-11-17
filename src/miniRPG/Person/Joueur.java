@@ -96,7 +96,7 @@ public class Joueur extends Person {
         this.setDefense(this.defense);
         this.X = 0;
         this.Y = 1;
-        this.money = 35;
+        this.money = 45;
 
         // Initialisation des attributs en fonction de la classe choisie
         switch (classe) {
@@ -188,6 +188,15 @@ public class Joueur extends Person {
     }
 
     /**
+     * Obtient la défense actuelle du joueur.
+     *
+     * @return La défense du joueur.
+     */
+    public Defense getDefense() {
+        return this.defense;
+    }
+
+    /**
      * Définit une nouvelle arme pour le joueur.
      * Met à jour la valeur d'attaque en fonction des dégâts de l'arme.
      *
@@ -252,5 +261,13 @@ public class Joueur extends Person {
      */
     public String getClasseType() {
         return this.classe.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "\n Nom : " + getName() + "\nClasse : " + getClasseType() + "\nVie : " + getHealth() + "\nArgent : "
+                + getMoney() + "$\nArme : " + getWeapon().getName() + " (Dégâts : " + getWeapon().getDamage()
+                + ")\nDéfense : "
+                + getDefense().getName() + " (Armure : " + getDefense().getDefense() + ") \n";
     }
 }

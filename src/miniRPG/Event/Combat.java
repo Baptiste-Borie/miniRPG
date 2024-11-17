@@ -94,8 +94,10 @@ public class Combat {
      * Démarre le combat et gère le déroulement au tour par tour.
      * Permet au joueur et à l'ennemi d'effectuer des actions jusqu'à ce que
      * l'un des deux soit vaincu ou que le joueur s'enfuie.
+     * 
+     * @return true si le joueur a gagné le combat, false sinon.
      */
-    public void start() {
+    public boolean start() {
         System.out.println("Le combat commence entre " + player.getName() + " et " + enemy.getName() + " !");
 
         // Boucle de combat au tour par tour
@@ -120,16 +122,20 @@ public class Combat {
             // Vérifier si le joueur est toujours en vie
             if (!player.isAlive()) {
                 System.out.println(player.getName() + " est vaincu !");
-                break;
+                return false;
             }
         }
 
         // Fin du combat
         if (player.isAlive() && !fleeExit) {
             player.addMoney(10);
-            System.out.println("Vous avez gagné le combat !" + (!bossFight ? " Vous avez gagné 5$." : ""));
+            System.out.println("Vous avez gagné le combat !" + (!bossFight ? " Vous avez gagné 10$." : ""));
+            return true;
         } else if (fleeExit) {
             System.out.println("Vous avez fui le combat.");
+            return true;
+        } else {
+            return false;
         }
     }
 
@@ -151,8 +157,9 @@ public class Combat {
         System.out.println("\n--- Tour du joueur ---");
         System.out.println("Choisissez une action :");
         System.out.println("1. Attaquer (" + (player.getAttack() - enemy.getArmor()) + " dégâts)");
-        System.out.println("2. Esquiver (50% de chance de succès)");
-        System.out.println("3. Se défendre (réduit les dégâts de 50%)");
+        System.out.println("2. Esquiver " + (player.getDodgeChance()) + "% de chance de réussite");
+        System.out.println(
+                "3. Se défendre (réduit les dégâts de 50%)" + (player.getDefenseChance()) + "% de chance de réussite");
         System.out.println("4. Fuir");
 
         int choice = -1; // Valeur par défaut pour détecter un choix invalide
@@ -256,7 +263,7 @@ public class Combat {
         }
 
         int enemyDamage = enemy.attack();
-        int damageToPlayer = enemyDamage;
+        int damageToPlayer = Math.max(0, enemyDamage - player.getArmor());
 
         // Appliquer la défense si le joueur est en train de défendre
         if (isPlayerDefending) {

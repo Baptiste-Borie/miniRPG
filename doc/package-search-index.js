@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"miniRPG"},{"l":"miniRPG.Event"},{"l":"miniRPG.Items"},{"l":"miniRPG.Items.Defense"},{"l":"miniRPG.Items.Weapon"},{"l":"miniRPG.Person"},{"l":"miniRPG.Rooms"}];updateSearchResults();

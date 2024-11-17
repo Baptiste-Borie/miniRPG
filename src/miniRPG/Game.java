@@ -52,6 +52,7 @@ public class Game {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println(loadIntroduction());
+        System.out.println((Joueur) player);
         while (this.gameRunning && player.isAlive()) {
             System.out.println(this.currentRoom);
 
@@ -70,6 +71,9 @@ public class Game {
                     break;
                 case "q":
                     event = moveAndCheckEvent(0, -1);
+                    break;
+                case "i":
+                    System.out.println(player);
                     break;
                 case "e":
                     gameRunning = false;
@@ -157,7 +161,14 @@ public class Game {
         } else if (this.caseEvent == '☠') {
             Person boss = new Boss();
             Combat combat = new Combat(player, boss, true);
-            combat.start();
+            boolean victory = combat.start();
+            if (victory) {
+                System.out.println("Félicitations ! Vous avez vaincu le boss !");
+                gameRunning = false; // Fin du jeu
+            } else {
+                System.out.println("Le boss vous a vaincu...");
+                gameRunning = false; // Fin du jeu, mais le joueur a perdu
+            }
         } else if (this.caseEvent == '❂') {
             loadShopRoom();
         } else if (this.caseEvent == '€') {

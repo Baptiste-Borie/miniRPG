@@ -12,17 +12,17 @@ public class Boss extends Person {
     /**
      * Points de vie initiaux du boss.
      */
-    private static final int LIFE = 150;
+    private static final int LIFE = 140;
 
     /**
      * Valeur d'attaque du boss.
      */
-    private static final int ATTACK = 40;
+    private static final int ATTACK = 35;
 
     /**
      * Valeur de défense du boss.
      */
-    private static final int DEFENSE = 20;
+    private static final int DEFENSE = 10;
 
     /**
      * Constructeur de la classe Boss.

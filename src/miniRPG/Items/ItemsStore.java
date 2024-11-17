@@ -5,6 +5,8 @@ import miniRPG.Items.Weapon.Weapon;
 import miniRPG.Items.Weapon.WeaponStore;
 import miniRPG.Items.Defense.Defense;
 import miniRPG.Items.Defense.DefenseStore;
+import miniRPG.Items.Potions.Potions;
+import miniRPG.Items.Potions.PotionsStore;
 
 /**
  * Classe ItemsStore représente une boutique regroupant des armes et des
@@ -29,8 +31,11 @@ public class ItemsStore {
         this.items = new ArrayList<Item>();
         WeaponStore weaponStore = new WeaponStore();
         DefenseStore defenseStore = new DefenseStore();
+        PotionsStore potionsStore = new PotionsStore();
         this.addWeaponStore(weaponStore.getWeapons());
         this.addDefenseStore(defenseStore.getDefenses());
+        this.addPotionsStore(potionsStore.getPotions());
+
     }
 
     /**
@@ -49,6 +54,15 @@ public class ItemsStore {
      */
     public void addDefenseStore(ArrayList<Defense> defenses) {
         this.items.addAll(defenses);
+    }
+
+    /**
+     * Ajoute une liste de potions à la boutique.
+     *
+     * @param potions Liste des potions à ajouter.
+     */
+    public void addPotionsStore(ArrayList<Potions> potions) {
+        this.items.addAll(potions);
     }
 
     /**
